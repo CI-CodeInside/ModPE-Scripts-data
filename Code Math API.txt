@@ -1,0 +1,61 @@
+//밑 부분들을 당신 스크립트 맨 위에 붙여넣기 해주세요
+
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 1h=D.1z.1E.1D().1C();6 12="/1I/r.G/P/1F";6 h="/13.1d";6 O=1h+12;6 g=O+h;6 1f="1g://1i.1j.r/1b/1o/1r/13.1d";6 1v="1g://1i.1j.r/1b/1o/1r/13.1L";6 1w=v;6 9=r.G.P.V.U.16();6 p,R="";6 C=0;6 k=i;6 z=i;6 Q="";6 o=5 1G();b(5 4.7.c(g).1q()==q){6 11=5 4.7.14(5 4.7.1B(g));B((p=11.1m())!=v)R+=p+"\\n";1N(R);11.F();b(1w==v){5 4.7.c(g).j();u(h+"\\n파일이 손상되었습니다\\n다시 다운로드합니다");5 4.7.c(9.W()+"/X.Y").j();m.w.t.s.E.A(9)}y{6 15=5 4.7.14(5 4.7.1c(4.m.1x(1v).1y()));6 18=0;6 19="";B((19=15.1m())!=v){o[18]=19;18++}15.F()}x(e){u(e)}b(o[0]!=v){b(1T<o[1]){f(1e+" "+o[2]+"\\n자동 업데이트 중 입니다");5 4.7.c(g).j();k=i;10();B(k==i)4.8.a.d(Z);b(z==q){f(h+"\\n\\n라이브러리 다운로드 성공\\n블럭런처를 재시작 합니다");4.8.a.d(N);5 4.7.c(9.W()+"/X.Y").j();m.w.t.s.E.A(9)}M{5 4.7.c(g).j();S("[1k]\\n"+Q);4.8.a.d(1l);f(h+"\\n\\n라이브러리 다운로드 실패\\n인터넷을 연결하고 재시작해 주세요\\n안전모드가 켜집니다");4.8.a.d(N);m.w.t.s.E.A(r.G.P.V.U.16())}}M{b(o[0]=="n"){f("["+1e+"] 의 서버 메시지\\n"+o[3])}}}}M{5 4.8.a(5 4.8.K({J:l(){y{b(5 4.7.c(O).1q()==i)5 4.7.c(O).1A();f(12+h+"\\n\\n라이브러리 다운로드중...");k=i;10();B(k==i)4.8.a.d(Z);b(z==q){f(h+"\\n\\n라이브러리 다운로드 성공\\n블럭런처를 재시작 합니다");4.8.a.d(N);5 4.7.c(9.W()+"/X.Y").j();m.w.t.s.E.A(9)}M{5 4.7.c(g).j();S("[1k]\\n"+Q);4.8.a.d(1l);f(h+"\\n\\n라이브러리 다운로드 실패\\n인터넷을 연결하고 재시작해 주세요\\n안전모드가 켜집니다");4.8.a.d(N);m.w.t.s.E.A(r.G.P.V.U.16())}}x(e){u(e)}}})).1n()};l f(I){9.1p(5 4.8.K({J:l(){y{D.H.L.1s(9,I,D.H.L.1H).1t()}x(e){u(e)}}}))};l S(I){9.1p(5 4.8.K({J:l(){y{D.H.L.1s(9,I,D.H.L.1J).1t()}x(e){u(e)}}}))};l 10(){5 4.8.a(5 4.8.K({J:l(){y{6 1u=5 4.m.1x(1f);6 1a=1u.1M();6 17=5 4.7.14(5 4.7.1c(1a.1O()));6 T=5 4.7.1P(5 4.7.1Q(g));C=0;B(q){b(C>=Z){4.8.a.d(1);C=0}6 p=17.p();b(p<0)1R;T.1S(p);C++}1a.1K();17.F();T.F();z=q;k=q}x(e){Q=e;z=i;k=q}}})).1n()};',62,118,'||||java|new|var|io|lang|ctx|Thread|if|File|sleep||ApiToast|apiFilePath|apiFile|false|delete|apiLoad|function|net||apiServerData|read|true|com|ui|mcpelauncher|print|null|zhuoweizhang|catch|try|apiLoadSuccess|forceRestart|while|apiTick|android|NerdyStuffActivity|close|mojang|widget|str|run|Runnable|Toast|else|3000|apiFolderPath|minecraftpe|apiBuffer|content|ApiToastS|bosfos|currentMainActivity|MainActivity|getFilesDir|running|lock|100|ApiLoad|brfr|apiFolder|Code_Math|BufferedReader|bufferedReader|get|brisr|apiCount|temp|urlConn|CoreInside|InputStreamReader|api|apiName|apiUrl|https|apiSdcardPath|raw|githubusercontent|Error|5000|readLine|start|ScriptVersionManger|runOnUiThread|exists|master|makeText|show|url|apiInfoUrl|apiMath|URL|openStream|os|mkdirs|FileReader|getAbsolutePath|getExternalStorageDirectory|Environment|API|Array|LENGTH_LONG|games|LENGTH_SHORT|disconnect|info|openConnection|eval|getInputStream|BufferedOutputStream|FileOutputStream|break|write|apiVersionCode'.split('|'),0,{}))
+/*
+//------------------------------
+//사용방법(읽고 지워도 됩니다)
+
+MathCI.avg(a,b)
+MathCI.avg(a,b,c)
+2, 3개의 수의 평균을 구한다
+
+MathCI.avgAG(a,b)
+두수의 산술기하평균을 구한다
+
+MathCI.avgArray(배열)
+배열안에 있는 '숫자'들의 평균을 구한다
+
+MathCI.random(a)
+0~a까지의 수 중에서 랜덤으로 아무 숫자(실수)를 꺼낸다
+
+MathCI.randomCut(a)
+0~a까지의 수 중에서 랜덤으로 아무 숫자(정수)를 꺼낸다
+
+MathCI.fct(자연수)
+자연수의 팩토리얼을 구한다
+
+MathCI.range(x,y)
+MathCI.range(x,y,z)
+좌표 에서 (x,y)혹은 (x,y,z)까지의 거리를 구한다
+
+MathCI.rangeGap(x,y,z,x2,y2,z2)
+좌표 공간에서(x,y,z)와 (x2,y2,z2)사이의 거리를 구한다
+
+MathCI.rangeEnt(ent1, ent2)
+엔티티간의 거리를 구한다
+
+MathCI.absRangeX(Yaw,Pitch)
+MathCI.absRangeY(Yaw,Pitch)
+MathCI.absRangeZ(Yaw,Pitch)
+각각 좌표 공간에서 바라보는 방향(Yaw,Pitch)쪽으로 절대거리 1칸을 구한다
+응용: 바라보는 방향 3칸 앞에 블럭 생성
+응용2: 바라보는 방향 양옆으로 날개모양 불꽃 파티클 생성
+
+MathCI.yaw(x,y,z)
+MathCI.pitch(x,y,z)
+위기능의 역연산으로
+좌표공간에서 원점부터 x,y,z방향의 yaw와 pitch구하기
+응용: 엔티티가 플레이어를 바라봄
+
+MathCI.roundCut(a, b)
+a의 숫자를 소수자리b까지 반올림한다
+예: MathCI.roundCut(8.88888, 2) = 8.89
+
+MathCI.ceilCut(a, b)
+a의 숫자를 소수자리b까지 올림한다
+
+MathCI.floorCut(a, b)
+a의 숫자를 소수자리b까지 내림한다
+
+//------------------------------
+*/
