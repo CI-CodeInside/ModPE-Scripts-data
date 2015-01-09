@@ -1,6 +1,6 @@
 var apiName = "API: Math";
 var apiVersion = "1.0";
-var apiVersionCode = 100;
+var apiVersionCode = 101;
 var CIMath = {};
 var apims,codems2,codems3;
 var apimb = false;
