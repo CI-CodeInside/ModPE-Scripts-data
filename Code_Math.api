@@ -1,1 +1,123 @@
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('9 R="1h: 4"9 1b="1.0"9 17=15 9 f={};9 14,13,12;9 O=L;9 X=L;9 o=0;9 v=0;9 V=J H();9 W=J H();f.G=g(a){8(5(a)=="6")7 4.G()*a;d 7 h}f.1c=g(x,y,z){8(5(x)=="6"&&5(y)=="6"&&5(z)=="6")7 4.F(x,y,z);d 8(5(x)=="6"&&5(y)=="6")7 4.w(4.s(x,2)+4.s(y,2));d 7 h}f.Y=g(x,y,z,C,E,B){8(5(x)=="6"&&5(y)=="6"&&5(z)=="6"&&5(C)=="6"&&5(E)=="6"&&5(B)=="6")7 4.F(4.A(x-C),4.A(y-E),4.A(z-B));d 7 h}f.Q=g(a,b,c){8(5(b)!="6"||5(a)!="6"){7 h}d 8(5(c)!="6"){7(a+b)/2}d{7(a+b+c)/3}}f.1a=g(q){8(5(q)=="P"){o=0;v=0;I(9 e S q){8(5(e)=="6"){o+=q[e];v++}}7 o/v}d 8(5(q)=="6")7 q;d 7 h}f.T=g(a,b){8(5(a)=="6"&&5(b)=="6")7 4.w(a*b);d 7 h}f.U=g(y,p){7(-1*4.K(y/j*4.m)*4.D(p/j*4.m))}f.Z=g(y,p){7(4.K(-p/j*4.m))}f.10=g(y,p){7(4.D(y/j*4.m)*4.D(p/j*4.m))}f.11=g(x,y,z){8(5(x)=="6"&&5(y)=="6"&&5(z)=="6"){9 t=4.w(4.s(x,2)+4.s(z,2));9 k=x/t;9 l=z/t;9 r=x/16;9 u=4.18(z/t)*j/4.m;9 19=4.M(y/t);9 i=0;8(k>0&&l>0&&r>0)i=N-u;d 8(k>0&&l<0&&r<0)i=N-u;d 8(k<0&&l<0&&r>0)i=u;d 8(k<0&&l>0&&r<0)i=u;d 8(l==1)i=0;d 8(k==1)i=1d;d 8(l==-1)i=j;d 8(k==-1)i=1e;d 8(k==0&&l==1&&r==0)h;7 i}d 7 h}f.1f=g(x,y,z){8(5(x)=="6"&&5(y)=="6"&&5(z)=="6")7-1*4.M(y/4.w(4.s(x,2)+4.s(z,2)))*j/4.m;d 7 h}f.1g=g(n){8(5(n)!="6"||4.1i(n)!=n||4.A(n)!=n){7 h}d{o=1;I(9 e=n;e>0;e--){o=o*e}7 e}}',62,81,'||||Math|typeof|number|return|if|var||||else||CIMath|function|null|alpha|180|apisinHorizontal|apicosHorizontal|PI||apimn||ary|apitanHorizontal|pow|apil|apiacosHorizontal|apimn2|sqrt||||abs|z2|x2|cos|y2|hypot|random|Array|for|new|sin|false|atan|360|apimb|object|avg|apiMathName|in|avgAG|absRangeX|apima|apima2|apimb2|rangeGap|absRangeY|absRangeZ|yaw|codems3|codems2|apims|100|apiz|apiMathVersionCode|acos|apiatanVertical|avgArray|apiMathVersion|range|90|270|pitch|fct|API|floor'.split('|'),0,{}))
+var apiName = "API: Math";
+var apiVersion = "1.0";
+var apiVersionCode = 100;
+var CIMath = {};
+var apims,codems2,codems3;
+var apimb = false;
+var apimb2 = false;
+var apimn = 0;
+var apimn2 = 0;
+var apima = new Array();
+var apima2 = new Array();
+
+CIMath.random = function(a) {
+	return Math.random() * a;
+}
+
+CIMath.randomCut = function(a) {
+	return Math.floor(Math.random() * (a + 1));
+}
+
+CIMath.range = function(x, y, z) {
+	if(typeof(x) == "number" && typeof(y) == "number" && typeof(z) == "number")
+		return Math.hypot(x, y, z);
+	else if(typeof(x) == "number" && typeof(y) == "number")
+		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+	else
+		return null;
+}
+
+CIMath.rangeGap = function(x, y, z, x2, y2, z2) {
+	if(typeof(x) == "number" && typeof(y) == "number" && typeof(z) == "number" && typeof(x2) == "number" && typeof(y2) == "number" && typeof(z2) == "number")
+		return Math.hypot(Math.abs(x - x2), Math.abs(y - y2), Math.abs(z - z2));
+	else
+		return null;
+}
+
+CIMath.avg = function(a, b, c) {
+	if(typeof(b) != "number" || typeof(a) != "number") {
+		return null;
+	}else if(typeof(c) != "number") {
+		return (a + b) / 2;
+	}else {
+		return (a + b + c) / 3;
+	}
+}
+
+CIMath.avgArray = function(ary) {
+	if(typeof(ary) == "object") {
+		apimn = 0;
+		apimn2 = 0;
+		for(var e in ary) {
+			if(typeof(e) == "number") {
+				apimn += ary[e];
+				apimn2++;
+			}
+		}
+		return apimn / apimn2;
+	}else if(typeof(ary) == "number")
+		return ary;
+	else
+		return null;
+}
+
+CIMath.avgAG = function(a, b) {
+	if(typeof(a) == "number" && typeof(b) == "number")
+		return Math.sqrt(a * b);
+	else
+		return null;
+}
+
+CIMath.absRangeX = function(y, p) {
+	return (-1 * Math.sin(y / 180 * Math.PI) * Math.cos(p / 180 * Math.PI));
+}
+
+CIMath.absRangeY = function(y, p) {
+	return (Math.sin(-p / 180 * Math.PI));
+}
+
+CIMath.absRangeZ = function(y, p) {
+	return (Math.cos(y / 180 * Math.PI) * Math.cos(p / 180 * Math.PI));
+}
+
+CIMath.yaw = function(x, y, z) {
+	if(typeof(x) == "number" && typeof(y) == "number" && typeof(z) == "number") {
+		var apil = Math.sqrt(Math.pow(x, 2)+Math.pow(z, 2));
+		var apisinHorizontal = x/apil;
+		var apicosHorizontal = z/apil;
+		var apitanHorizontal = x/apiz;
+		var apiacosHorizontal = Math.acos(z/apil)*180/Math.PI;
+		var apiatanVertical = Math.atan(y/apil);
+		var alpha = 0;
+		if(apisinHorizontal > 0 && apicosHorizontal > 0 && apitanHorizontal > 0) alpha = 360-apiacosHorizontal;
+		else if(apisinHorizontal > 0 && apicosHorizontal < 0 && apitanHorizontal < 0) alpha = 360-apiacosHorizontal;
+		else if(apisinHorizontal < 0 && apicosHorizontal < 0 && apitanHorizontal > 0) alpha = apiacosHorizontal;
+		else if(apisinHorizontal < 0 && apicosHorizontal > 0 && apitanHorizontal < 0) alpha = apiacosHorizontal;
+		else if(apicosHorizontal == 1) alpha = 0;
+		else if(apisinHorizontal == 1) alpha = 90;
+		else if(apicosHorizontal == -1) alpha = 180;
+		else if(apisinHorizontal == -1) alpha = 270;
+		else if(apisinHorizontal == 0 && apicosHorizontal == 1 && apitanHorizontal == 0) null;
+		return alpha;
+	}else
+		return null;
+}
+
+CIMath.pitch = function(x, y, z) {
+	if(typeof(x) == "number" && typeof(y) == "number" && typeof(z) == "number")
+		return -1 * Math.atan(y / Math.sqrt(Math.pow(x, 2)+Math.pow(z, 2))) * 180 / Math.PI;
+	else
+		return null;
+}
+
+CIMath.fct = function(n) {
+	if(typeof(n) != "number" || Math.floor(n) != n || Math.abs(n) != n) {
+		return null;
+	}else {
+		apimn = 1;
+		for(var e = n; e > 0; e--) {
+			apimn = apimn * e;
+		}
+		return e;
+	}
+}
