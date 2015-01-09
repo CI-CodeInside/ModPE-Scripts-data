@@ -11,7 +11,7 @@
 //___@____@___@_____@__@__@__@__@______
 //@@@@@__@___@__@@@@__@__@@@@__@@@@____
 //
-var apiName = "API: Math";
+var apiName = "Code: Math API";
 var apiVersion = "1.0";
 //
 /*
