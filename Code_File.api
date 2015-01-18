@@ -11,32 +11,43 @@
 //___@____@___@_____@__@__@__@__@______
 //@@@@@__@___@__@@@@__@__@@@@__@@@@____
 //
-var FILEAPIapiName = "Code: File API";
-var FILEAPIapiVersion = "1.0";
+var apiName = "Code: Math API";
+var apiVersion = "1.2";
 //
 /*
 ——Change Log——
 1.0
 	-출시(릴리즈)
+1.1
+	-새 함수 추가
+	-MathCI.absX(x,y,z)
+	-MathCI.absY(x,y,z)
+	-MathCI.absZ(x,y,z)
+1.2
+	-yaw기능 오류 수정
 ——How to Use——
-File.load(path)
-File.getRoot()
-File.getMCPEFolder()
-File.getMapFolder()
-File.getUserName()
-File.getOption(option_name)
-File.save(path, array)
-File.setFolder(path)
-File.remove(path)
-File.exist(path)
-File.download(path, url)
-File.downloadManager(folder, filename, url)
-File.loading()
-File.loadingSuccess()
-File.loadingError()
-File.loadingProgress()
-File.MCPEReboot()
-File.MCPESafeModeReboot()
+MathCI.avg(a,b)
+MathCI.avg(a,b,c)
+MathCI.avgAG(a,b)
+MathCI.avgArray(배열)
+MathCI.random(a)
+MathCI.randomCut(a)
+MathCI.randomPM()
+MathCI.fct(자연수)
+MathCI.range(x,y)
+MathCI.range(x,y,z)
+MathCI.rangeGap(x,y,z,x2,y2,z2)
+MathCI.rangeEnt(ent1, ent2)
+MathCI.absRangeX(Yaw,Pitch)
+MathCI.absRangeY(Yaw,Pitch)
+MathCI.absRangeZ(Yaw,Pitch)
+MathCI.absX(x,y,z)
+MathCI.absY(x,y,z)
+MathCI.absZ(x,y,z)
+MathCI.yaw(x,y,z)
+MathCI.pitch(x,y,z)
+MathCI.roundCut(a, b)
+MathCI.ceilCut(a, b)
+MathCI.floorCut(a, b)
 */
-
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('2 1Z=1l;2 5={};2 22=3 h();2 24=3 h();2 r=a;2 q=a;2 l=a;2 N=a;2 j=y.x.X.27.1v.1x();2 B=4.6.B;2 11=4.6.11;2 12=4.6.12;2 13=4.6.13;2 15=4.6.15;2 I=4.6.I;2 t=4.6.t;2 R=4.6.R;2 i=F.1D.i;5.1E=7(8,c){f(2r(c)=="2s"){2 O=3 11(3 12(8));O.1p(c);O.g()}U{2 V=3 13(3 I(8));W(2 e Z c)V.28(c[e]);V.g()}};5.2e=7(8){f(5.1o(8)==k)9 a;G{2 1n=3 R(3 15(8))}H(1m){2 17=3 B(3 t(8));2 Q,m="";A((Q=17.P())!=a){f(m!="")m+="\\n";m+=Q}17.g();9 m}G{2 c=[];A(C)c.u(1n.2t())}H(1m){9 c}};5.2u=7(8){3 4.6.5(8).1j()};5.1o=7(8){9 3 4.6.5(8).T()};5.1z=7(8){3 4.6.5(8).1A()};5.1B=7(){9 i.v().w()+"/K/y.x"};5.1G=7(){9 i.v().w()+"/K/y.x/1H/"+1K.1O()};5.1X=7(){9 i.v().w()};5.2z=7(){2 o=i.v().w()+"/K/y.x/X/1i.1f";f(3 4.6.5(o).T()){2 p=3 4.6.B(3 4.6.t(o));2 b;2 d=3 h();2 s=3 h();A((b=p.P())!=a){d.u(b.J(":")[0]);s.u(b.J(":")[1])}p.g();W(2 e Z d){f(d[e]=="2v"){9 s[e];1b}}}U 9 a};5.1w=7(1a){2 o=i.v().w()+"/K/y.x/X/1i.1f";f(3 4.6.5(o).T()){2 p=3 4.6.B(3 4.6.t(o));2 b;2 d=3 h();2 s=3 h();A((b=p.P())!=a){d.u(b.J(":")[0]);s.u(b.J(":")[1])}p.g();W(2 e Z d){f(d[e]==1a){9 s[e];1b}}}U 9 a};5.1y=7(8,18,L){r="1k";q=k;l=k;j.1C(3 4.z.1c({1d:7(){G{2 1e=3 F.E.1I.1J(L);2 1g=3 F.1L.1M.1N(1e);1h.1P(18);1h.1Q(8,18);j.1R(F.m.1S.1T).1U(1g)}H(e){r=e}}}))};5.1V=7(8,L){r="1k";q=k;l=k;3 4.z.1W(3 4.z.1c({1d:7(){G{2 Y=3 4.E.1Y(L);2 S=Y.20();S.21();2 19=S.23();2 M=3 4.6.25(Y.26());2 16=3 4.6.I(8);2 14=4.z.29.h.2a(4.z.2b.2c,2d);2 10=0,D;A((D=M.2f(14))!=-1){10+=D;N=((10*1l)/19);2g.1p(14,0,D)}16.2h();16.g();M.g();q=C;l=C}H(e){r=e;q=k;l=C}}})).2i()};5.2j=7(){9 l};5.2k=7(){9 q};5.2l=7(){9 r};5.2m=7(){9 N};5.2n=7(){3 4.6.5(j.2o()+"/2p.2q").1j();E.1q.1r.1s.1t.1u(j)};5.2w=7(){E.1q.1r.1s.1t.1u(j)};2 2x="2y®1F";',62,160,'||var|new|java|File|io|function|path|return|null|tempRead|contents|tempTitle||if|close|Array|Environment|ctx|false|FILEAPIINLoad|content||tempPath|tempBRFR|FILEAPIINLoadSuccess|FILEAPIINLoadError|tempContent|FileReader|push|getExternalStorageDirectory|getAbsolutePath|mojang|com|lang|while|BufferedReader|true|tempCount|net|android|try|catch|FileOutputStream|split|games|url|tempBis|FILEAPIINprogress|bw|readLine|len|ObjectInputStream|tempApiUrlConn|exists|else|oos|for|minecraftpe|tempApiUrl|in|tempTotal|BufferedWriter|FileWriter|ObjectOutputStream|tempData|FileInputStream|tempFos|br|file|tempLength|str|break|Runnable|run|tempUri|txt|tempRequest|request|options|delete|None|100|ex|ois|exist|write|zhuoweizhang|mcpelauncher|ui|NerdyStuffActivity|forceRestart|currentMainActivity|getOption|get|downloadManager|setFolder|mkdirs|getMCPEFolder|runOnUiThread|os|save|_CodeInside|getMapFolder|minecraftWorlds|Uri|parse|Level|app|DownloadManager|Request|getWorldDir|setTitle|setDestinationInExternalPublicDir|getSystemService|Context|DOWNLOAD_SERVICE|enqueue|download|Thread|getRoot|URL|FILEAPIapiVersionCode|openConnection|connect|fa|getContentLength|fa2|BufferedInputStream|openStream|MainActivity|writeObject|reflect|newInstance|Byte|TYPE|1024|load|read|fos|flush|start|loading|loadingSuccess|loadingError|loadingProgress|MCPEReboot|getFilesDir|running|lock|typeof|string|readObject|remove|mp_username|MCPESafeModeReboot|FILEAPIapiIdt|LOL_copyright|getUserName'.split('|'),0,{}));
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 1f=1b;6 9={};6 1h,U,12;6 14=R;6 1c=R;6 t=0;6 1q=0;6 q=O F();6 18=O F();9.B=d(a){7 4.B()*a};9.T=d(a){7 4.E(4.B()*(V(a)+1))};9.13=d(){g(4.B()<0.5)7 1;h 7-1};9.1a=d(x,y,z){g(A(z)!="L")7 4.i(4.8(x,2)+4.8(y,2)+4.8(z,2));h 7 4.i(4.8(x,2)+4.8(y,2))};9.11=d(a,b){7 4.i(4.8(s.S(a)-s.S(b),2)+4.8(s.K(a)-s.K(b),2)+4.8(s.J(a)-s.J(b),2))};9.19=d(x,y,z,I,H,M){7 4.i(4.8(x-I,2)+4.8(y-H,2)+4.8(z-M,2))};9.1z=d(a,b,c){g(A(c)=="L")7(a/2)+(b/2);h 7(a/3)+(b/3)+(c/3)};9.1k=d(q){g(A(q)=="1n"){6 f=0;6 C=0;v(6 e W q){g(A(q[e])=="X"){f+=q[e]/2;C++}}7 2*f/C}h 7 q};9.Y=d(a,b){7 4.i(a*b)};9.Z=d(y,p){7(-1*4.G(y/k*4.o)*4.D(p/k*4.o))};9.15=d(y,p){7(4.G(-p/k*4.o))};9.16=d(y,p){7(4.D(y/k*4.o)*4.D(p/k*4.o))};9.17=d(x,y,z){6 u=4.i(4.8(x,2)+4.8(z,2));6 l=x/u;6 m=z/u;6 r=x/z;6 w=4.1d(z/u)*k/4.o;6 1e=4.N(y/u);6 j=0;g(l>0&&m>0&&r>0)j=P-w;h g(l>0&&m<0&&r<0)j=P-w;h g(l<0&&m<0&&r>0)j=w;h g(l<0&&m>0&&r<0)j=w;h g(m==1)j=0;h g(l==1)j=1i;h g(m==-1)j=k;h g(l==-1)j=1j;h g(l==0&&m==1&&r==0)Q;7 j};9.1l=d(x,y,z){7-1*4.N(y/4.i(4.8(x,2)+4.8(z,2)))*k/4.o};9.1m=d(n){g(4.E(n)!=n||4.1o(n)!=n)7 Q;h{t=1;v(6 e=n;e>0;e--)t=t*e;7 t}};9.1p=d(a,b){6 f=1;v(6 e=b;e>0;e--)f=f*10;7 4.1r(a*f)/f};9.1s=d(a,b){6 f=1;v(6 e=b;e>0;e--)f=f*10;7 4.E(a*f)/f};9.1t=d(a,b){6 f=1;v(6 e=b;e>0;e--)f=f*10;7 4.1u(a*f)/f};9.1v=d(x,y,z){7 x/4.i(4.8(x,2)+4.8(y,2)+4.8(z,2))};9.1w=d(x,y,z){7 y/4.i(4.8(x,2)+4.8(y,2)+4.8(z,2))};9.1x=d(x,y,z){7 z/4.i(4.8(x,2)+4.8(y,2)+4.8(z,2))};6 1y="1g";',62,98,'||||Math||var|return|pow|MathCI||||function||temp|if|else|sqrt|alpha|180|apisinHorizontal|apicosHorizontal||PI||apima|apitanHorizontal|Entity|apimn|apil|for|apiacosHorizontal||||typeof|random|temp1|cos|floor|Array|sin|y2|x2|getZ|getY|undefined|z2|atan|new|360|null|false|getX|randomCut|codems2|parseInt|in|number|avgAG|absRangeX||rangeEnt|codems3|randomPM|apimb|absRangeY|absRangeZ|yaw|apima2|rangeGap|range|120|apimb2|acos|apiatanVertical|apiVersionCode|Have_a_Nice_day_copyright_CodeInside|apims|90|270|avgArray|pitch|fct|object|abs|roundCut|apimn2|ceil|floorCut|ceilCut|round|absX|absY|absZ|apiMath|avg'.split('|'),0,{}));
