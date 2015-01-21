@@ -12,14 +12,19 @@
 //@@@@@__@___@__@@@@__@__@@@@__@@@@____
 //
 var apiName = "Code: Math API";
-var apiVersion = "1.1";
+var apiVersion = "1.2";
 //
 /*
 ——Change Log——
 1.0
 	-출시(릴리즈)
 1.1
-	-absX,Y,Z함수 추가
+	-새 함수 추가
+	-MathCI.absX(x,y,z)
+	-MathCI.absY(x,y,z)
+	-MathCI.absZ(x,y,z)
+1.2
+	-yaw기능 오류 수정
 ——How to Use——
 MathCI.avg(a,b)
 MathCI.avg(a,b,c)
@@ -45,4 +50,4 @@ MathCI.roundCut(a, b)
 MathCI.ceilCut(a, b)
 MathCI.floorCut(a, b)
 */
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 1f=1b;6 9={};6 1h,U,12;6 14=R;6 1c=R;6 u=0;6 1q=0;6 q=O F();6 18=O F();9.A=d(a){7 4.A()*a};9.T=d(a){7 4.E(4.A()*(V(a)+1))};9.13=d(){g(4.A()<0.5)7 1;h 7-1};9.1a=d(x,y,z){g(B(z)!="L")7 4.i(4.8(x,2)+4.8(y,2)+4.8(z,2));h 7 4.i(4.8(x,2)+4.8(y,2))};9.11=d(a,b){7 4.i(4.8(r.S(a)-r.S(b),2)+4.8(r.K(a)-r.K(b),2)+4.8(r.J(a)-r.J(b),2))};9.19=d(x,y,z,I,H,M){7 4.i(4.8(x-I,2)+4.8(y-H,2)+4.8(z-M,2))};9.1z=d(a,b,c){g(B(c)=="L")7(a/2)+(b/2);h 7(a/3)+(b/3)+(c/3)};9.1k=d(q){g(B(q)=="1n"){6 f=0;6 C=0;v(6 e W q){g(B(q[e])=="X"){f+=q[e]/2;C++}}7 2*f/C}h 7 q};9.Y=d(a,b){7 4.i(a*b)};9.Z=d(y,p){7(-1*4.G(y/m*4.o)*4.D(p/m*4.o))};9.15=d(y,p){7(4.G(-p/m*4.o))};9.16=d(y,p){7(4.D(y/m*4.o)*4.D(p/m*4.o))};9.17=d(x,y,z){6 s=4.i(4.8(x,2)+4.8(z,2));6 k=x/s;6 l=z/s;6 t=x/s;6 w=4.1d(z/s)*m/4.o;6 1e=4.N(y/s);6 j=0;g(k>0&&l>0&&t>0)j=P-w;h g(k>0&&l<0&&t<0)j=P-w;h g(k<0&&l<0&&t>0)j=w;h g(k<0&&l>0&&t<0)j=w;h g(l==1)j=0;h g(k==1)j=1i;h g(l==-1)j=m;h g(k==-1)j=1j;h g(k==0&&l==1&&t==0)Q;7 j};9.1l=d(x,y,z){7-1*4.N(y/4.i(4.8(x,2)+4.8(z,2)))*m/4.o};9.1m=d(n){g(4.E(n)!=n||4.1o(n)!=n)7 Q;h{u=1;v(6 e=n;e>0;e--)u=u*e;7 u}};9.1p=d(a,b){6 f=1;v(6 e=b;e>0;e--)f=f*10;7 4.1r(a*f)/f};9.1s=d(a,b){6 f=1;v(6 e=b;e>0;e--)f=f*10;7 4.E(a*f)/f};9.1t=d(a,b){6 f=1;v(6 e=b;e>0;e--)f=f*10;7 4.1u(a*f)/f};9.1v=d(x,y,z){7 x/4.i(4.8(x,2)+4.8(y,2)+4.8(z,2))};9.1w=d(x,y,z){7 y/4.i(4.8(x,2)+4.8(y,2)+4.8(z,2))};9.1x=d(x,y,z){7 z/4.i(4.8(x,2)+4.8(y,2)+4.8(z,2))};6 1y="1g";',62,98,'||||Math||var|return|pow|MathCI||||function||temp|if|else|sqrt|alpha|apisinHorizontal|apicosHorizontal|180||PI||apima|Entity|apil|apitanHorizontal|apimn|for|apiacosHorizontal||||random|typeof|temp1|cos|floor|Array|sin|y2|x2|getZ|getY|undefined|z2|atan|new|360|null|false|getX|randomCut|codems2|parseInt|in|number|avgAG|absRangeX||rangeEnt|codems3|randomPM|apimb|absRangeY|absRangeZ|yaw|apima2|rangeGap|range|111|apimb2|acos|apiatanVertical|apiVersionCode|Have_a_Nice_day_copyright_CodeInside|apims|90|270|avgArray|pitch|fct|object|abs|roundCut|apimn2|ceil|floorCut|ceilCut|round|absX|absY|absZ|apiMath|avg'.split('|'),0,{}));
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 1f=1b;6 9={};6 1h,U,12;6 14=R;6 1c=R;6 t=0;6 1q=0;6 q=O F();6 18=O F();9.B=d(a){7 4.B()*a};9.T=d(a){7 4.E(4.B()*(V(a)+1))};9.13=d(){g(4.B()<0.5)7 1;h 7-1};9.1a=d(x,y,z){g(A(z)!="L")7 4.i(4.8(x,2)+4.8(y,2)+4.8(z,2));h 7 4.i(4.8(x,2)+4.8(y,2))};9.11=d(a,b){7 4.i(4.8(s.S(a)-s.S(b),2)+4.8(s.K(a)-s.K(b),2)+4.8(s.J(a)-s.J(b),2))};9.19=d(x,y,z,I,H,M){7 4.i(4.8(x-I,2)+4.8(y-H,2)+4.8(z-M,2))};9.1z=d(a,b,c){g(A(c)=="L")7(a/2)+(b/2);h 7(a/3)+(b/3)+(c/3)};9.1k=d(q){g(A(q)=="1n"){6 f=0;6 C=0;v(6 e W q){g(A(q[e])=="X"){f+=q[e]/2;C++}}7 2*f/C}h 7 q};9.Y=d(a,b){7 4.i(a*b)};9.Z=d(y,p){7(-1*4.G(y/k*4.o)*4.D(p/k*4.o))};9.15=d(y,p){7(4.G(-p/k*4.o))};9.16=d(y,p){7(4.D(y/k*4.o)*4.D(p/k*4.o))};9.17=d(x,y,z){6 u=4.i(4.8(x,2)+4.8(z,2));6 l=x/u;6 m=z/u;6 r=x/z;6 w=4.1d(z/u)*k/4.o;6 1e=4.N(y/u);6 j=0;g(l>0&&m>0&&r>0)j=P-w;h g(l>0&&m<0&&r<0)j=P-w;h g(l<0&&m<0&&r>0)j=w;h g(l<0&&m>0&&r<0)j=w;h g(m==1)j=0;h g(l==1)j=1i;h g(m==-1)j=k;h g(l==-1)j=1j;h g(l==0&&m==1&&r==0)Q;7 j};9.1l=d(x,y,z){7-1*4.N(y/4.i(4.8(x,2)+4.8(z,2)))*k/4.o};9.1m=d(n){g(4.E(n)!=n||4.1o(n)!=n)7 Q;h{t=1;v(6 e=n;e>0;e--)t=t*e;7 t}};9.1p=d(a,b){6 f=1;v(6 e=b;e>0;e--)f=f*10;7 4.1r(a*f)/f};9.1s=d(a,b){6 f=1;v(6 e=b;e>0;e--)f=f*10;7 4.E(a*f)/f};9.1t=d(a,b){6 f=1;v(6 e=b;e>0;e--)f=f*10;7 4.1u(a*f)/f};9.1v=d(x,y,z){7 x/4.i(4.8(x,2)+4.8(y,2)+4.8(z,2))};9.1w=d(x,y,z){7 y/4.i(4.8(x,2)+4.8(y,2)+4.8(z,2))};9.1x=d(x,y,z){7 z/4.i(4.8(x,2)+4.8(y,2)+4.8(z,2))};6 1y="1g";',62,98,'||||Math||var|return|pow|MathCI||||function||temp|if|else|sqrt|alpha|180|apisinHorizontal|apicosHorizontal||PI||apima|apitanHorizontal|Entity|apimn|apil|for|apiacosHorizontal||||typeof|random|temp1|cos|floor|Array|sin|y2|x2|getZ|getY|undefined|z2|atan|new|360|null|false|getX|randomCut|codems2|parseInt|in|number|avgAG|absRangeX||rangeEnt|codems3|randomPM|apimb|absRangeY|absRangeZ|yaw|apima2|rangeGap|range|120|apimb2|acos|apiatanVertical|apiVersionCode|Have_a_Nice_day_copyright_CodeInside|apims|90|270|avgArray|pitch|fct|object|abs|roundCut|apimn2|ceil|floorCut|ceilCut|round|absX|absY|absZ|apiMath|avg'.split('|'),0,{}));
