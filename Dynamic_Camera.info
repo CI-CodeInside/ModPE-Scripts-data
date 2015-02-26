@@ -1,4 +1,13 @@
 VERSION:Aell - 0.2v
 VERSION_CODE:100
-CHANGE_LOG:Aell - 0.1v(20150222)\n- 다이나믹 카메라 기능 추가\n위치 타겟팅 기능 추가\n- 메인버튼 작업\n-메인메뉴 작업\n\nAell - 0.2v(20150225)\n- 경고팝업 작업\n- 메인메뉴버튼 작업
+CHANGE_LOG1:Aell - 0.1v(20150222)
+CHANGE_LOG2:- 다이나믹 카메라 기능 추가
+CHANGE_LOG3:- 위치 타겟팅 기능 추가
+CHANGE_LOG4:- 메인버튼 작업
+CHANGE_LOG5:- 메인메뉴 작업
+CHANGE_LOG6:
+CHANGE_LOG7:Aell - 0.2v(20150225)
+CHANGE_LOG8:- 경고팝업 작업
+CHANGE_LOG9:- 메인메뉴버튼 작업
+CHANGE_LOG10:
 SERVER_MESSAGE:null
