@@ -1,0 +1,10 @@
+VERSION:Somi v1
+AI_VERSION:v1
+SKIN_VERSION:v1
+MODELING_VERSION:v1
+AI_VERSION_CODE:100
+SKIN_VERSION_CODE:100
+MODELING_VERSION_CODE:100
+MESSAGE_TYPE:1
+//0:메시지 없음, 1:한번만 방송, 2:강제로 방송, 3:다운로드 금지 강제로 방송
+MESSAGE:§7Somi A.I now release!¶§7Version - Somi v1¶§7Model, A.I Copyright 2015 CodeInside
