@@ -1,8 +1,9 @@
+
 var Somi = {};
-var Somi.entity = null;
-var Somi.entityType = 11;
-var Somi.delay = 0;
-Entity.getUniqueId(par1int)
+Somi.entity = null;
+Somi.entityType = 11;
+Somi.delay = 0;
+Somi.uniqueId = null;
 ModPE.setItem(472, "ender_pearl", 0, "Somi Debug", 1);
 
 function getYaw(x, y, z) {
@@ -61,6 +62,10 @@ function absZ(x, y, z) {
 	return z / Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
 };
 
+function SomiNewLevel(str) {
+	Somi.uniqueId = loadData(_MAP_FILE, "UNIQUE_ID");
+}
+
 function SomiModTick() {
 	if(Somi.delay >= 200) {
 		SomiSpawner();
@@ -75,6 +80,13 @@ function SomiModTick() {
 	}
 }
 
+function SomiEntityAddedHook(ent) {
+	if(Somi.entity == null && Entity.getUniqueId(ent) == Somi.uniqueId) {
+		Entity.setMobSkin(ent, "mob/somi.png");
+		Entity.setRenderType(ent, codeHumanoid);
+	}
+}
+
 function SomiSpawner() {
 	var x = Math.floor(Player.getX() - Math.absRangeX(Entity.getYaw(Player.getEntity()), Entity.getPitch(Player.getEntity())));
 	var y = Math.floor(Player.getY() - Math.absRangeY(Entity.getYaw(Player.getEntity()), Entity.getPitch(Player.getEntity())));
@@ -86,5 +98,6 @@ function SomiSpawner() {
 		var ent = Entity.spawnMob(x + 0.5, ty + 1.6, z + 0.5, Somi.entityType, "mob/somi.png");
 		Entity.setRenderType(ent, codeHumanoid);
 		Entity.setHealth(ent, 100);
+		saveData(_MAP_FILE, "UNIQUE_ID", Entity.getUniqueId(ent));
 		Somi.entity = ent;
 	}
