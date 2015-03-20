@@ -1,4 +1,3 @@
-
 var Somi = {};
 Somi.entity = null;
 Somi.entityType = 11;
@@ -63,7 +62,7 @@ function absZ(x, y, z) {
 };
 
 function SomiNewLevel(str) {
-	Somi.uniqueId = loadData(_MAP_FILE, "UNIQUE_ID");
+	Somi.uniqueId = loadData(_MAP_FILE(), "UNIQUE_ID");
 }
 
 function SomiModTick() {
@@ -72,7 +71,7 @@ function SomiModTick() {
 		Somi.delay = 0;
 	}
 	if(Somi.entity == null || Entity.entityTypeId(Somi.entity) != Somi.entityType) {
-		try{Entity.remove(Somi.entity)}finally(){};
+		try{Entity.remove(Somi.entity)}catch(e){};
 		Somi.entity = null;
 		Somi.delay++;
 	}else {
@@ -98,6 +97,7 @@ function SomiSpawner() {
 		var ent = Entity.spawnMob(x + 0.5, ty + 1.6, z + 0.5, Somi.entityType, "mob/somi.png");
 		Entity.setRenderType(ent, codeHumanoid);
 		Entity.setHealth(ent, 100);
-		saveData(_MAP_FILE, "UNIQUE_ID", Entity.getUniqueId(ent));
+		saveData(_MAP_FILE(), "UNIQUE_ID", Entity.getUniqueId(ent));
 		Somi.entity = ent;
 	}
+}
