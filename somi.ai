@@ -3,7 +3,28 @@ Somi.entity = null;
 Somi.entityType = 11;
 Somi.delay = 0;
 Somi.uniqueId = null;
+Somi.emotion = 0x00;
+Somi.jumpDelay = 0x00;
+
+Somi.hpManager = function() {
+	if(Entity.getHealth(Somi.entity) <= 720) {
+		debug("HpManager", "Death");
+		Entity.setHealth(Somi.entity, 0);
+	}
+}
+
+Somi.jump = function() {
+	if(Somi.jumpDelay & 0x0f != 0x0f)
+		Somi.jumpDelay++;
+	if(noJumpBlock.indexOf(Level.getTile(x + (absX(px - x) / 3), y + (absY(py - y) / 3), z + (absZ(pz - z) / 3)) != -1 && Somi.jumpDelay == 0x0f) {
+		Somi.jumpDelay = 0x00;
+		Entity.setVel(Somi.entity, 0.5);
+	}
+}
+
 ModPE.setItem(472, "ender_pearl", 0, "Somi Debug", 1);
+
+var noJumpBlock = [0,6,26,27,30,31,32,37,38,39,40,50,51,59,63,64,65,66,68,71,78,83,92,95,96,104,105,106,111,126,127,141,142,175,244];
 
 function getYaw(x, y, z) {
 	var apil = Math.sqrt(Math.pow(x, 2)+Math.pow(z, 2));
@@ -62,16 +83,40 @@ function absZ(x, y, z) {
 };
 
 function SomiNewLevel(str) {
+	if(!_MAP_DIR().exists()) {
+		_MAP_DIR().mkdirs();
+	}
+	if(!_MAP_FILE().exists()) {
+		_MAP_FILE().createNewFile();
+	}
 	Somi.uniqueId = loadData(_MAP_FILE(), "UNIQUE_ID");
+	debug("this", Somi.uniqueId);
+}
+
+function SomiLeaveGame() {
+	Somi.entity = null;
+	debugT("EXIT", "map");
+}
+
+function SomiAttackHook(e, v) {
+	if(Player.isPlayer(e)) debug(Entity.getUniqueId(v));
+}
+
+function SomiProcCmd(str) {
+	var cmd = str.split(" ");
+	switch(cmd) {
+	}
 }
 
 function SomiModTick() {
 	if(Somi.delay >= 200) {
-		SomiSpawner();
 		Somi.delay = 0;
+		debug("new", "SomiSpawner");
+		SomiSpawner();
+		return;
 	}
-	if(Somi.entity == null || Entity.entityTypeId(Somi.entity) != Somi.entityType) {
-		try{Entity.remove(Somi.entity)}catch(e){};
+	if(Somi.entity == null || Entity.getEntityTypeId(Somi.entity) != Somi.entityType || Entity.getHealth(Somi.entity) < 1) {
+		try{Entity.setHealth(Somi.entity, 0)}catch(e){};
 		Somi.entity = null;
 		Somi.delay++;
 	}else {
@@ -80,24 +125,53 @@ function SomiModTick() {
 }
 
 function SomiEntityAddedHook(ent) {
-	if(Somi.entity == null && Entity.getUniqueId(ent) == Somi.uniqueId) {
+	if(Somi.entity == null && Entity.getHealth(ent) > 720 && Entity.getEntityTypeId(ent) == Somi.entityType) {
+		Somi.entity = ent;
 		Entity.setMobSkin(ent, "mob/somi.png");
-		Entity.setRenderType(ent, codeHumanoid);
+		Entity.setRenderType(ent, codeHumanoid.renderType);
 	}
 }
 
 function SomiSpawner() {
-	var x = Math.floor(Player.getX() - Math.absRangeX(Entity.getYaw(Player.getEntity()), Entity.getPitch(Player.getEntity())));
-	var y = Math.floor(Player.getY() - Math.absRangeY(Entity.getYaw(Player.getEntity()), Entity.getPitch(Player.getEntity())));
-	var z = Math.floor(Player.getZ() - Math.absRangeZ(Entity.getYaw(Player.getEntity()), Entity.getPitch(Player.getEntity())));
+	debug("search", "");
+	var x = Math.floor(Player.getX() - absRangeX(Entity.getYaw(Player.getEntity()), Entity.getPitch(Player.getEntity())) * 10);
+	var y = Math.floor(Player.getY() - absRangeY(Entity.getYaw(Player.getEntity()), Entity.getPitch(Player.getEntity())) * 10);
+	var z = Math.floor(Player.getZ() - absRangeZ(Entity.getYaw(Player.getEntity()), Entity.getPitch(Player.getEntity())) * 10);
 	for(var ty = y; y - ty < 5 && (Level.getTile(x, ty, z) == 0); ty--);
 	if(Level.getTile(x, ty, z) == 0) {
+		debug("fail", x+":"+ty+":"+z);
 		return;
 	}else {
-		var ent = Entity.spawnMob(x + 0.5, ty + 1.6, z + 0.5, Somi.entityType, "mob/somi.png");
-		Entity.setRenderType(ent, codeHumanoid);
-		Entity.setHealth(ent, 100);
+		debug("run on", x+":"+ty+":"+z);
+		var ent = Level.spawnMob(x + 0.5, ty + 1.6, z + 0.5, Somi.entityType, "mob/somi.png");
+		Entity.setRenderType(ent, codeHumanoid.renderType);
+		Entity.setHealth(ent, 740);
 		saveData(_MAP_FILE(), "UNIQUE_ID", Entity.getUniqueId(ent));
 		Somi.entity = ent;
+	}
+}
+
+function SomiMainActivity() {
+	Somi.hpManager();
+	var x = Entity.getX(Somi.entity);
+	var y = Entity.getY(Somi.entity);
+	var z = Entity.getZ(Somi.entity);
+	var px = Player.getX();
+	var py = Player.getY();
+	var pz = Player.getZ();
+	switch(Somi.emotion) {
+		case "0x01":
+			
+			break;
+		case "0x02":
+			break;
+		default:
+			if(rangeEnt(Somi.entity, Player.getEntity()) > 8) {
+				if(Level.getGameMode() = 1)
+					Somi.emotion = 0x02;
+				else
+					Somi.emotion = 0x01;
+			}
+			break;
 	}
 }
